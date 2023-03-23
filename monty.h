@@ -25,7 +25,7 @@
 			NULL, NULL      \
 		}                     \
 	}
-
+extern int isascii(int);
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -97,7 +97,6 @@ void rotr(stack_t **stack, unsigned int line_count);
 void opcode(stack_t **stack, char *str, unsigned int line_cnt);
 
 int is_digit(char *string);
-extern int isascii(int);
 int isnumber(char *str);
 
 #endif /* MONTY_H */
