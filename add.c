@@ -1,5 +1,8 @@
-#include "monty.h"
 #include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
+#include "monty.h"
 
 /**
  * _add -  adds the first two nodes of the stack

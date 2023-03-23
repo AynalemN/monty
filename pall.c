@@ -1,42 +1,13 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "./monty.h"
+#include "monty.h"
 
 /**
- * opcode - function in charge of running builtins
- * @stack: stack given by main
- * @str: string to compare
+ * pall - prints the stack
+ * @stack: stack given by main in start.c
  * @line_cnt: amount of lines
  *
- * Return: nothing
+ * Return: void
  */
-void opcode(stack_t **stack, char *str, unsigned int line_cnt)
+void pall(stack_t **stack, unsigned int line_cnt __attribute__((unused)))
 {
-	int i = 0;
-
-	instruction_t op[] = INSTRUCTIONS;
-
-	if (!strcmp(str, "stack"))
-	{
-		global.data_struct = 1;
-		return;
-	}
-	if (!strcmp(str, "queue"))
-	{
-		global.data_struct = 0;
-		return;
-	}
-
-	while (op[i].opcode)
-	{
-		if (strcmp(op[i].opcode, str) == 0)
-		{
-			op[i].f(stack, line_cnt);
-			return; /* if we found a match, run the function */
-		}
-		i++;
-	}
-	fprintf(stderr, "L%d: unknown instruction %s\n", line_cnt, str);
-	exit(EXIT_FAILURE);
+	print_stack(*stack);
 }

@@ -1,5 +1,8 @@
-#include "monty.h"
 #include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
+#include "monty.h"
 
 /**
  * _div - divides the next top value by the top value
